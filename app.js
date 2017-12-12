@@ -2,7 +2,8 @@ const express = require('express');
 
 const app = express();
 let books = [];
-const pageTemplate = '<html><head><title>{{title}}</title></head><body><header><nav><ul><li><a href="/">Home</a></li><li><a href="/newbook">Add A Book</a></li></ul></nav></header><main>{{content}}</main><footer>&copy;2017 CCA</footer></body></html>';
+
+const pageTemplate = '<html><head><title>{{title}}</title></head><body><header><nav><ul><li><a href="/">Home</a></li><li><a href="/newbook">Add A New Book</a></li></ul></nav></header><main>{{content}}</main><footer>&copy;2017-2018 Shawnsvill, LLC</footer></body></html>';
 const bookEntryForm = '<form action="/addnewbook" method="GET">' +
     '<label for="title">Title</label>' +
     '<input type="text" id="title" name="title">' +
@@ -11,7 +12,6 @@ const bookEntryForm = '<form action="/addnewbook" method="GET">' +
     '<button type="submit">Save</button>'
     '</form>';
 
-// Register Middleware
 app.use(express.static('public'));
 
 app.get("/", (req,res) => {
